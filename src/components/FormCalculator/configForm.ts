@@ -2,29 +2,44 @@ import * as Yup from "yup";
 import { FormikConfig, FormikHelpers } from "formik";
 
 export interface FormCalculatorType {
-  height: number;
-  weight: number;
-  waist: number;
-  neck: number;
+  height: string;
+  gender: string;
+  weight: string;
+  waist: string;
+  neck: string;
+  hip: string;
 }
 
 const validationSchema = Yup.object({
-  height: Yup.number().required("La altura es requerida"),
-  weight: Yup.number().required("El peso es requerido"),
-  waist: Yup.number().required("El tamaño es requerido"),
-  neck: Yup.number().required("El cuello es requerido"),
+  hip: Yup.string().matches(/^[0-9.]+$/g, 'El número es inválido'),
+  gender: Yup.string().required("La género es requerido"),
+  height: Yup.string().matches(/^[0-9.]+$/g, 'El número es inválido').required("La altura es requerida"),
+  weight: Yup.string().matches(/^[0-9.]+$/g, 'El número es inválido').required("El peso es requerido"),
+  waist: Yup.string().matches(/^[0-9.]+$/g, 'El número es inválido').required("El tamaño es requerido"),
+  neck: Yup.string().matches(/^[0-9.]+$/g, 'El número es inválido').required("El cuello es requerido"),
 });
+
+const validationSchemaFemale = Yup.object({
+  hip: Yup.string().matches(/^[0-9.]+$/g, 'El número es inválido'),
+  gender: Yup.string().required("La género es requerido"),
+  height: Yup.string().matches(/^[0-9.]+$/g, 'El número es inválido').required("La altura es requerida"),
+  weight: Yup.string().matches(/^[0-9.]+$/g, 'El número es inválido').required("El peso es requerido"),
+  waist: Yup.string().matches(/^[0-9.]+$/g, 'El número es inválido').required("El tamaño es requerido"),
+  neck: Yup.string().matches(/^[0-9.]+$/g, 'El número es inválido').required("El cuello es requerido"),
+});
+
 
 export type SubmitCalculatorValues = (
   values: FormCalculatorType,
   actions: FormikHelpers<FormCalculatorType>
 ) => void;
 
-export const getConfigCalculate = (
+export const getConfigFormCalculate = (
   initialValues: FormCalculatorType,
-  onSubmit: SubmitCalculatorValues
+  onSubmit: SubmitCalculatorValues,
+  isFemale: boolean,
 ): FormikConfig<FormCalculatorType> => ({
   initialValues,
-  validationSchema,
+  validationSchema: isFemale ? validationSchemaFemale : validationSchema,
   onSubmit,
 });

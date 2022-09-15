@@ -10,11 +10,9 @@ export const Hero = () => {
       </h1>
       <div className="mb-10">
         <p className="text-letter mb-4">
-          Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en
-          demostraciones de tipografías o de borradores de diseño para probar el
-          diseño visual antes de insertar el texto final
+          El método de la Marina de Estados Unidos (US Navy Method) ofrece una manera sencilla de calcular un aproximado del porcentaje de tejido adiposo en el cuerpo de una persona.
         </p>
-        <p className="text-letter">Lorem ipsum es el texto que se usa</p>
+        <p className="text-letter">Los valores requeridos para la fórmula son los siguientes:</p>
       </div>
     </div>
   );

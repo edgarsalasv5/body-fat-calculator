@@ -1,23 +1,25 @@
-export const InputRadio = ({
-  id,
-  name,
-  label,
-  value,
-}: {
+import { useField } from 'formik';
+import React from 'react';
+
+interface InputRadioProps {
   id: string;
   name: string;
   label: string;
   value: string;
+}
+
+export const InputRadio: React.FC<InputRadioProps> = ({
+  id,
+  name,
+  label,
+  value,
 }) => {
+  const [field] = useField(name);
+
   return (
-    <div className="flex flex-col mb-6">
-      <label className="text-white mb-2">Altura (cm)</label>
-      <input
-        type="text"
-        inputMode="numeric"
-        className="outline-none bg-transparent border-[2px] border-grayinput rounded-full h-[40px] px-4 text-white font-light"
-        placeholder="Escribe tu peso"
-      />
+    <div className="flex items-center gap-2">
+      <input className="w-4 h-4 accent-site" type="radio" id={id} {...field} value={value} checked={field.value === value} />
+      <label htmlFor={id} className="text-white">{label}</label>
     </div>
   );
 };
