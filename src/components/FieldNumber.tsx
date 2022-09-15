@@ -1,30 +1,24 @@
-
 import { Field, useField } from "formik";
 
 interface ITextFieldProps {
   label?: string;
-  name: string;
   type?: string;
   placeholder?: string;
 }
 export const FieldNumber = ({
   label,
-  name,
   type = "number",
   placeholder = "",
-  ...props
 }: ITextFieldProps) => {
-  const [field, meta] = useField(name);
+;
   return (
-    <div>
-      {label && <label className="card-input-label" htmlFor={name}>{label}</label>}
-      <Field
-        {...field}
-        name={name}
+    <div className="flex flex-col mb-6">
+      <label className="text-white mb-2">{label}</label>
+      <input
         type={type}
+        inputMode="numeric"
+        className="outline-none bg-transparent border-[2px] border-grayinput rounded-full h-[40px] px-4 text-white font-light"
         placeholder={placeholder}
-        className="card-input-value"
-        {...props}
       />
     </div>
   );

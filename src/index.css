@@ -1,3 +1,84 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.wrapper {
+  width: 1500px;
+  margin: auto;
+}
+
+body {
+  @apply bg-main;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-site bg-opacity-30;
+}
+
+.gradiant-level {
+  background: #009fe3;
+  background: linear-gradient(
+    90deg,
+    #009fe3 0%,
+    #009c3d 20%,
+    #98c21d 40%,
+    #feca00 60%,
+    #d76328 100%
+  );
+  @apply w-full rounded-lg h-[150px];
+}
+
+@media screen and (max-width: 1450px) {
+  .wrapper {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .wrapper {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .wrapper {
+    width: 95%;
+    margin: auto;
+  }
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: local('Noto Sans'), local("NotoSans-Light"),
+    url("./assets/fonts/Noto_Sans/NotoSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: local('Noto Sans'), local("NotoSans-Medium"),
+    url("./assets/fonts/Noto_Sans/NotoSans-Medium.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: local('Noto Sans'), local("NotoSans-SemiBold"),
+    url("./assets/fonts/Noto_Sans/NotoSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif !important;
+  font-weight: 400;
+}
