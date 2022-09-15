@@ -39,19 +39,19 @@ export const FatGraph: React.FC<FatGraphProps> = ({ percent }) => {
               <div className="flex flex-col items-center w-[20%]">
                 <div className="bg-level-20 border-white border-[2px] rounded-sm w-4 h-4"></div>
                 <p className="text-white font-semibold text-sm mt-2">6-13%</p>
-                <p className="text-white text-sm">Esencial</p>
+                <p className="text-white text-sm">Deportista</p>
               </div>
 
               <div className="flex flex-col items-center w-[20%]">
                 <div className="bg-level-40 border-white border-[2px] rounded-sm w-4 h-4"></div>
                 <p className="text-white font-semibold text-sm mt-2">15-17%</p>
-                <p className="text-white text-sm">Esencial</p>
+                <p className="text-white text-sm">Fitness</p>
               </div>
 
               <div className="flex flex-col items-center w-[20%]">
                 <div className="bg-level-60 border-white border-[2px] rounded-sm w-4 h-4"></div>
                 <p className="text-white font-semibold text-sm mt-2">18-25%</p>
-                <p className="text-white text-sm">Esencial</p>
+                <p className="text-white text-sm">Obeso</p>
               </div>
 
               <div className="flex flex-col items-center w-[20%]">
